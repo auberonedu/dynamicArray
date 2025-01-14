@@ -1,19 +1,28 @@
 public class DynamicStringList implements StringList {
+    private String value;
+    private int index;
 
-// 1.
+    // Constructor
+    public DynamicStringList(int index, String value) {
+        this.index = index;
+        this.value = value;
+    }
 
+    // 1.
+    public String get(int index) {
 
+        
+    }
 
+    // 2.
+    public void set(int index, String value) {
 
+    }
 
-// 2.
+    // 3.
+    public void add(String value) {
 
-
-
-
-
-// 3.
-
+    }
 
 
 
