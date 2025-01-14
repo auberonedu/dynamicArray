@@ -1,11 +1,9 @@
 public class DynamicStringList implements StringList {
     
     public String[] stringArray = new String[10];
-    private int size;
+    private int size = 0;
+    private int capacity = 10;
 
-    public DynamicStringList() {
-        // constructor
-    }
 
     /**
      * Retrieves the string at the specified index in the list.
@@ -41,7 +39,8 @@ public class DynamicStringList implements StringList {
      * @param value the string to add to the list.
      */
     public void add(String value){
-
+        stringArray[size] = value;
+        size++;
     }
 
     /**
