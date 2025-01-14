@@ -1,9 +1,14 @@
 public class DynamicStringList implements StringList {
+    // instance field(s)
+    private String[] array;
     
     @Override
     public String get(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        // DONE
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("index out of bounds.");
+        }
+        return array[index];
     }
 
     @Override
