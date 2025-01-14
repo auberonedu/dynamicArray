@@ -23,6 +23,10 @@ public class DynamicStringList implements StringList{
     }
 
     public String remove(int index) {
+        if (index < 0 || index > dynamicArray.length) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+        
         String removed = dynamicArray[index];
         dynamicArray[index] = null;
         return removed;
