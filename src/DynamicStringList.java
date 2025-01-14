@@ -18,6 +18,15 @@ public class DynamicStringList implements StringList {
             throw new IndexOutOfBoundsException("Index out of bounderies: " + index);
         }
         return array[index];
-    }   
+    }
+    
+    // replace the value of a specific index
+    @Override
+    public void set(int index, String value) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds!");
+        }
+        array[index] = value;
+    }
 }
 
