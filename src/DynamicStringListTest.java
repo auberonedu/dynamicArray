@@ -27,10 +27,12 @@ public class DynamicStringListTest {
         stringList.add("dog");
         stringList.add("!!");
 
-        String[] expectedList = {"the", "quick", "red", "fox", "jumped", "over", " the", "lazy", "brown", "dog", "!!"};
-        String[] actualList = stringList;
+        String expectedList = "the quick red fox jumped over the lazy brown dog !!";
+        // String[] actualList = stringList;
 
-        assertArrayEquals(expectedList, actualList);
+        String testString = stringList.toString();
+
+        assertEquals(expectedList, testString);
     }
     
 }
