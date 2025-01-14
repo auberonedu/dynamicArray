@@ -42,11 +42,11 @@ public class DynamicStringList implements StringList {
         String removeVal = array[index];
 
         for (int i = index; i < size - 1; i++){
-            array[i] = array[index++];
+            array[i] = array[index + 1];
         }
         
-        array[--size] = null;
-        --size;
+        array[size - 1] = null;
+        size--;
 
         return removeVal;
     }
