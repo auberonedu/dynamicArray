@@ -1,5 +1,7 @@
 public class DynamicStringList implements StringList {
 
+    
+
 // 1.
 
 
@@ -18,18 +20,31 @@ public class DynamicStringList implements StringList {
 
 
 
-// 4.
 
 
+// Below this - 
 
+// main question, what Can I attach to when I write 
+  public String remove(int index){
+    return "Hello"; 
+  };
 
-// 5.
+ 
+  public int size(){
 
+    int counter = 0;
+    for(Array item : items){
+        if(item != null){
+            counter++;
+        }
+    }
+    return counter;
+  };
 
-
-
-
-// 6.
+  
+  public int capacity(){
+    return array.size
+  };
 
 
 
