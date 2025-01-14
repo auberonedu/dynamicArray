@@ -32,7 +32,10 @@ public class DynamicStringList implements StringList {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
      */
     public void set(int index, String value){
-
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
+        }
+        stringArray[index] = value;
     }
 
     /**
