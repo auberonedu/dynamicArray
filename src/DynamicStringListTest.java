@@ -28,9 +28,9 @@ public class DynamicStringListTest {
         stringList.add("!!");
 
         String[] expectedList = {"the", "quick", "red", "fox", "jumped", "over", " the", "lazy", "brown", "dog", "!!"};
+        String[] actualList = stringList;
 
-        assertArrayEquals(expectedList, stringList);
-        assert
+        assertArrayEquals(expectedList, actualList);
     }
     
 }
