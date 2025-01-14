@@ -1,11 +1,30 @@
 public class DynamicStringList implements StringList {
-    public DynamicStringList (int length){
+
+    public DynamicStringList(int length) {
         String[] arr = new String[length];
     }
 
+    // Fields
+    public String[] stringArr;
+
     @Override
     public String get(int index) {
-        return null;
+        // For loop - Iteration
+        // If statement
+        // Return index
+        String indexValue = " ";
+
+        if (index < 0 || index >= stringArr.length) {
+            throw new IndexOutOfBoundsException();
+        } else {
+            for (int i = 0; i < stringArr.length; i++) {
+                if (i == index) {
+                    indexValue = stringArr[i];
+                }
+            }
+        }
+
+        return indexValue;
     }
 
     @Override
