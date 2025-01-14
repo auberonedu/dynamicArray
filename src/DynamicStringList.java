@@ -63,7 +63,7 @@ public class DynamicStringList implements StringList {
         String removed = "error";
         try {
             removed = stringArray[index];
-            for(int i = size -1; i >= index; i--){
+            for(int i = size; i >= index; i--){
                 stringArray[i] = stringArray[i+1];
             }
             size--;
