@@ -7,15 +7,18 @@ public class DynamicStringList implements StringList {
     public String get(int index) {
         // DONE
         if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException("index out of bounds.");
+            throw new IndexOutOfBoundsException("index is out of bounds.");
         }
         return array[index];
     }
 
     @Override
     public void set(int index, String value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
+        // DONE
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is out of bounds.");
+        }
+        array[index] = value;
     }
 
     @Override
@@ -38,7 +41,7 @@ public class DynamicStringList implements StringList {
 
     @Override
     public int capacity() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'capacity'");
+        // DONE
+        return array.length;
     }
 }
