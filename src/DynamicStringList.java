@@ -4,6 +4,9 @@ public class DynamicStringList implements StringList{
     private int counter = 0;
 
     public String get(int index) {
+        if (index < 0 || index > dynamicArray.length) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
         return dynamicArray[index];
     }
 
