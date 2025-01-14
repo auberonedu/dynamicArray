@@ -66,7 +66,7 @@ public class DynamicStringList implements StringList {
             throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
         }
         String removed = stringArray[index];
-        for(int i = size; i >= index; i--){
+        for(int i = index; i <= size; i++){
             stringArray[i] = stringArray[i+1];
         }
         size--;
