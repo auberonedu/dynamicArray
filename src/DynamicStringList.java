@@ -16,4 +16,19 @@ public class DynamicStringList implements StringList {
         }
         stringArray[index] = value;
     }
+
+    // public void add(String value) {
+        
+    // }
+
+    public int size() {
+        int length = 0;
+
+        for (String string : stringArray) {
+            if (string != null) {
+                length++;
+            }
+        }
+        return length;
+    }
 }
