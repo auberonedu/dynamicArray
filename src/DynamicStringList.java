@@ -23,13 +23,13 @@ public class DynamicStringList implements StringList {
 
     @Override
     public void add(String value) {
-        // TODO Auto-generated method stub
+        // DONE
         array[size++] = value; // Add the value and increment size
     }
 
     @Override
     public String remove(int index) {
-        // TODO Auto-generated method stub
+        // DONE
         if (index < 0 || index >= size()) {
             throw new IndexOutOfBoundsException("index is out of bounds.");
         }
