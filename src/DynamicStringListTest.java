@@ -35,4 +35,18 @@ public class DynamicStringListTest {
         assertEquals(expectedList, testString);
     }
     
+    @Test
+    void removeFront() {
+        stringList.add("apple");
+        stringList.add("banana");
+        stringList.add("carrot");
+        stringList.add("date");
+
+        String testString = stringList.toString();
+
+        String expectedList = "banana carrot date";
+
+
+        assertEquals(expectedList, testString);
+    }
 }
