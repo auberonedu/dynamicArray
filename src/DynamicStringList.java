@@ -1,4 +1,6 @@
 public class DynamicStringList implements StringList {
+    private String[] strArray;
+    private int size; 
 
     private String[] strArray;
     private int size;
