@@ -89,4 +89,13 @@ public class DynamicStringList implements StringList {
             return capacity;
     }
 
+    @Override
+    public String toString(){
+        String arrayString = "[";
+        for (int i = 0; i <= size; i ++){
+            arrayString += stringArray[i] + ", ";
+        }
+        return arrayString.substring(0, arrayString.length() - 2) + "]";
+    }
+
 }
