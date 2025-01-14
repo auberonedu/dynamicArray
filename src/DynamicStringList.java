@@ -1,4 +1,6 @@
 public class DynamicStringList implements StringList {
+    
+    String[] array = new String[10];
     /**
      * Retrieves the string at the specified index in the list.
      *
