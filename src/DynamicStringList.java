@@ -46,6 +46,8 @@ public class DynamicStringList implements StringList {
             capacity *= 2;
             // plug in arr at first size locations
             stringArray = Arrays.copyOf(stringArray, capacity);
+            stringArray[size] = value;
+            size++;
         } else {
             stringArray[size] = value;
             size++;
