@@ -1,6 +1,7 @@
 public class DynamicStringList implements StringList {
     // instance field(s)
     private String[] array;
+    private int size;
     
     @Override
     public String get(int index) {
@@ -31,8 +32,8 @@ public class DynamicStringList implements StringList {
 
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        // DONE
+        return size;
     }
 
     @Override
