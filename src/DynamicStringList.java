@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class DynamicStringList implements StringList {
 
     
-    public String[] stringArray = new String[10];
+    private String[] stringArray = new String[10];
     private int size = 0;
     private int capacity = 10;
 
@@ -60,7 +60,18 @@ public class DynamicStringList implements StringList {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
      */
     public String remove(int index){
-            return ;
+        String removed = "error";
+        try {
+            removed = stringArray[index];
+            for(int i = size -1; i >= index; i--){
+                stringArray[i] = stringArray[i+1];
+            }
+            size--;
+            
+        } catch (IndexOutOfBoundsException error){
+            System.out.println(error);
+        }
+        return removed;
     }
 
     /**
