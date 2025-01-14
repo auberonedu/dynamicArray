@@ -1,50 +1,44 @@
 public class DynamicStringList implements StringList {
+    private String value;
+    private int index;
 
-    
-
-// 1.
-
-
-
-
-
-// 2.
-
-
-
-
-
-// 3.
-
-
-
-
-
-
-
-// Below this - 
-
-// main question, what Can I attach to when I write 
-  public String remove(int index){
-    return "Hello"; 
-  };
-
- 
-  public int size(){
-
-    int counter = 0;
-    for(Array item : items){
-        if(item != null){
-            counter++;
-        }
+    // Constructor
+    public DynamicStringList(int index, String value) {
+        this.index = index;
+        this.value = value;
     }
-    return counter;
-  };
 
-  
-  public int capacity(){
-    return array.size
-  };
+    // 1.
+    public String get(int index) {
+
+        
+    }
+
+    // 2.
+    public void set(int index, String value) {
+
+    }
+
+    // 3.
+    public void add(String value) {
+
+    }
+
+
+
+
+// 4.
+
+
+
+
+// 5.
+
+
+
+
+
+// 6.
 
 
 
