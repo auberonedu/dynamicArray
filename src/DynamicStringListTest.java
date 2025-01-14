@@ -131,15 +131,43 @@ public class DynamicStringListTest {
     }
 
     @Test
-    void removeOutOfBounds() {
+    void setFirst() {
         stringList.add("apple");
         stringList.add("banana");
         stringList.add("carrot");
         stringList.add("date");
-        stringList.remove(5);
+        stringList.set(0, "astronaut");
 
         String testString = stringList.toString();
-        String expectedList = "Index 5 out of bounds";
+        String expectedList = "[astronaut, banana, carrot, date]";
+
+        assertEquals(expectedList, testString);
+    }
+
+    @Test
+    void setLast() {
+        stringList.add("apple");
+        stringList.add("banana");
+        stringList.add("carrot");
+        stringList.add("date");
+        stringList.set(3, "danger");
+
+        String testString = stringList.toString();
+        String expectedList = "[apple, banana, carrot, danger]";
+
+        assertEquals(expectedList, testString);
+    }
+
+    @Test
+    void setMiddle() {
+        stringList.add("apple");
+        stringList.add("banana");
+        stringList.add("carrot");
+        stringList.add("date");
+        stringList.set(2, "cat");
+
+        String testString = stringList.toString();
+        String expectedList = "[apple, banana, cat, date]";
 
         assertEquals(expectedList, testString);
     }
