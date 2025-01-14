@@ -1,11 +1,14 @@
 public class DynamicStringList implements StringList {
-    private String value;
+    private String[] arr;
     private int index;
 
     // Constructor
-    public DynamicStringList(int index, String value) {
-        this.index = index;
-        this.value = value;
+
+
+    // The array length should be X amout but the content of it shuold all be set to null;
+    public DynamicStringList() {
+        arr = new String[10];
+        int index = 0;
     }
 
     // 1.
@@ -32,7 +35,18 @@ public class DynamicStringList implements StringList {
 
 
 
-// 5.
+// 5. Size
+    public int size(){
+        int counter = 0;
+        //when defining these, what can I latch onto to simulate the actual datatype/structure later
+        for (Integer i : index) {
+            if(i != null){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
 
 
 
