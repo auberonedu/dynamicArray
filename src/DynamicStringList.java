@@ -12,7 +12,7 @@ public class DynamicStringList implements StringList {
      *                                   index >= size()).
      */
     public String get(int index) {
-        if (index < 0 || index >= size()) {
+        if (index < 0 || index >= capacity()) {
             throw new IndexOutOfBoundsException();
         }
 
@@ -28,7 +28,7 @@ public class DynamicStringList implements StringList {
      *                                   index >= size()).
      */
     public void set(int index, String value) {
-        if (index < 0 || index >= size()) {
+        if (index < 0 || index >= capacity()) {
             throw new IndexOutOfBoundsException();
         }
         array[index] = value;
@@ -40,7 +40,7 @@ public class DynamicStringList implements StringList {
      * @param value the string to add to the list.
      */
     public void add(String value) {
-        if (count > size()) {
+        if (count > capacity()) {
             String[] placeholder = new String[size() + 1];
             for (int i = 0; i < size() - 1; i++) {
                 placeholder[i] = array[i];
@@ -62,7 +62,7 @@ public class DynamicStringList implements StringList {
      *                                   index >= size()).
      */
     public String remove(int index) {
-        if (index < 0 || index >= size()) {
+        if (index < 0 || index >= capacity()) {
             throw new IndexOutOfBoundsException();
         }
         String removedWord = array[index];
@@ -85,6 +85,6 @@ public class DynamicStringList implements StringList {
     }
 
     public int capacity() {
-        return 0;
+        return array.length;
     }
 }
