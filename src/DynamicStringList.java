@@ -15,13 +15,10 @@ public class DynamicStringList implements StringList {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
      */
     public String get(int index){
-        String result = "Error";
-        try {
-            return stringArray[index];
-            } catch (IndexOutOfBoundsException error) {
-            System.out.println("Error: " + error);
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
         }
-        return result;
+        return stringArray[index];
     }
 
     /**
@@ -63,17 +60,14 @@ public class DynamicStringList implements StringList {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
      */
     public String remove(int index){
-        String removed = "error";
-        try {
-            removed = stringArray[index];
-            for(int i = size; i >= index; i--){
-                stringArray[i] = stringArray[i+1];
-            }
-            size--;
-            
-        } catch (IndexOutOfBoundsException error){
-            System.out.println(error);
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
         }
+        String removed = stringArray[index];
+        for(int i = size; i >= index; i--){
+            stringArray[i] = stringArray[i+1];
+        }
+        size--;
         return removed;
     }
 
