@@ -22,6 +22,12 @@ public class DynamicStringList implements StringList{
         currentIndex++;
     }
 
+    public String remove(int index) {
+        String removed = dynamicArray[index];
+        dynamicArray[index] = null;
+        return removed;
+    }
+
     public int size() {
         int count = 0;
         for (int i = 0; i < dynamicArray.length; i++) {
