@@ -1,12 +1,14 @@
 public class DynamicStringList implements StringList {
 
-    public DynamicStringList(int length) {
-        String[] arr = new String[length];
+    // Constructor
+    public DynamicStringList(int setSize) {
+        this.stringArr = new String[setSize];
     }
 
     // Fields
     public String[] stringArr;
 
+    // Methods
     @Override
     public String get(int index) {
         // For loop - Iteration
@@ -29,7 +31,15 @@ public class DynamicStringList implements StringList {
 
     @Override
     public void set(int index, String value) {
-
+        if (index < 0 || index >= stringArr.length) {
+            throw new IndexOutOfBoundsException();
+        } else {
+            for (int i = 0; i > stringArr.length; i++){
+                if (i == index){
+                    stringArr[i] = value;
+                }
+            }
+        }
     }
 
     @Override
