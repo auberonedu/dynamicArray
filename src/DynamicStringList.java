@@ -1,11 +1,15 @@
 public class DynamicStringList implements StringList {
+    private String[] strArray;
+    private int size; 
 
-   public String get(int index) {
-    return String stringy(index);
+    
+   
+    public String get(int index) {
+    return strArray[index];
    }
 
-   public String set(int index, String value) {
-    this value = value;
+   public void set(int index, String value) {
+    strArray[index] = value;
    }
 
    public void add(String value) {
