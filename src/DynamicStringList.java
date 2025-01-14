@@ -3,6 +3,7 @@ public class DynamicStringList implements StringList {
     private String[] array = new String[5];
     private int count = 0;
 
+    //Kim
     /**
      * Retrieves the string at the specified index in the list.
      *
@@ -34,6 +35,7 @@ public class DynamicStringList implements StringList {
         array[index] = value;
     }
 
+    // Kim
     /**
      * Adds a new string to the end of the list.
      *
@@ -84,6 +86,7 @@ public class DynamicStringList implements StringList {
         return count;
     }
 
+    // Kim
     public int capacity() {
         return array.length;
     }
