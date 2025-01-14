@@ -9,4 +9,11 @@ public class DynamicStringList implements StringList {
         
         return stringArray[index];
     }
+
+    public void set(int index, String value) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is out of bounds.");
+        }
+        stringArray[index] = value;
+    }
 }
