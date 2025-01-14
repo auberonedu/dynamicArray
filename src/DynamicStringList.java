@@ -33,13 +33,7 @@ public class DynamicStringList implements StringList{
     }
 
     public int size() {
-        int count = 0;
-        for (int i = 0; i < dynamicArray.length; i++) {
-            if (dynamicArray[i] != null) {
-                count++;
-            }
-        }
-        return count;
+        return currentIndex;
     }
 
     public int capacity() {
