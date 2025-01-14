@@ -1,8 +1,5 @@
 public class DynamicStringList implements StringList {
-    public static void main(String[] args) {
-        System.out.println("Test");
-    }
-
+    
     @Override
     public String get(int index) {
         // TODO Auto-generated method stub
