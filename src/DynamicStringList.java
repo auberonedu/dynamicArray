@@ -31,4 +31,8 @@ public class DynamicStringList implements StringList {
         }
         return length;
     }
+
+    public int capacity() {
+        return stringArray.length;
+    }
 }
