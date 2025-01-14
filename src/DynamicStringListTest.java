@@ -14,6 +14,59 @@ public class DynamicStringListTest {
     // check capacity
 
     @Test
+    void checkSizeSmall() {
+        stringList.add("the");
+        stringList.add("quick");
+        stringList.add("red");
+        stringList.add("fox");
+        stringList.add("jumped");
+        stringList.add("over");
+        stringList.add("the");
+        stringList.add("lazy");
+        stringList.add("brown");
+
+        int expectedSize = 9;
+
+        assertEquals(expectedSize, stringList.size());
+    }
+    
+    @Test
+    void checkSize() {
+        stringList.add("the");
+        stringList.add("quick");
+        stringList.add("red");
+        stringList.add("fox");
+        stringList.add("jumped");
+        stringList.add("over");
+        stringList.add("the");
+        stringList.add("lazy");
+        stringList.add("brown");
+        stringList.add("dog");
+        stringList.add("!!");
+
+        int expectedSize = 11;
+
+        assertEquals(expectedSize, stringList.size());
+    }
+
+    @Test
+    void checkCapacitySmall() {
+        stringList.add("the");
+        stringList.add("quick");
+        stringList.add("red");
+        stringList.add("fox");
+        stringList.add("jumped");
+        stringList.add("over");
+        stringList.add("the");
+        stringList.add("lazy");
+        stringList.add("brown");
+
+        int expectedCapacity = 10;
+
+        assertEquals(expectedCapacity, stringList.capacity());
+    }
+
+    @Test
     void addElevenStrings() {
         stringList.add("the");
         stringList.add("quick");
