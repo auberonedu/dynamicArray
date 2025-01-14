@@ -24,7 +24,7 @@ public class DynamicStringList implements StringList {
     @Override
     public void add(String value) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        array[size++] = value; // Add the value and increment size
     }
 
     @Override
