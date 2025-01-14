@@ -1,4 +1,6 @@
+import java.util.Arrays;
 public class DynamicStringList implements StringList {
+
     
     public String[] stringArray = new String[10];
     private int size = 0;
@@ -39,8 +41,15 @@ public class DynamicStringList implements StringList {
      * @param value the string to add to the list.
      */
     public void add(String value){
-        stringArray[size] = value;
-        size++;
+        if (size == capacity) {
+            //  double capacity
+            capacity *= 2;
+            // plug in arr at first size locations
+            stringArray = Arrays.copyOf(stringArray, capacity);
+        } else {
+            stringArray[size] = value;
+            size++;
+        }
     }
 
     /**
@@ -60,7 +69,7 @@ public class DynamicStringList implements StringList {
      * @return the size of the list.
      */
     public int size(){
-            return;
+            return size;
     }
 
     /**
@@ -69,7 +78,7 @@ public class DynamicStringList implements StringList {
      * @return the capacity of the list.
      */
     public int capacity(){
-            return ;
+            return capacity;
     }
 
 }
