@@ -27,7 +27,7 @@ public class DynamicStringListTest {
         stringList.add("dog");
         stringList.add("!!");
 
-        String expectedList = "the quick red fox jumped over the lazy brown dog !!";
+        String expectedList = "the, quick, red, fox, jumped, over, the, lazy, brown, dog, !!";
         // String[] actualList = stringList;
 
         String testString = stringList.toString();
@@ -41,11 +41,10 @@ public class DynamicStringListTest {
         stringList.add("banana");
         stringList.add("carrot");
         stringList.add("date");
+        stringList.remove(0);
 
         String testString = stringList.toString();
-
-        String expectedList = "banana carrot date";
-
+        String expectedList = "banana, carrot, date";
 
         assertEquals(expectedList, testString);
     }
