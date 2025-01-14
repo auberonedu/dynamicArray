@@ -11,9 +11,6 @@ public class DynamicStringList implements StringList {
     // Methods
     @Override
     public String get(int index) {
-        // For loop - Iteration
-        // If statement
-        // Return index
         String indexValue = " ";
 
         if (index < 0 || index >= stringArr.length) {
@@ -44,6 +41,10 @@ public class DynamicStringList implements StringList {
 
     @Override
     public void add(String value) {
+
+        if (stringArr[stringArr.length - 1] != null) {
+            String[] newList = new String[stringArr.length * 2];
+        }
 
     }
 
