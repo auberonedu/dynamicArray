@@ -31,6 +31,23 @@ public class DynamicStringList implements StringList {
         }
     }
 
+    public String remove(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is out of bounds.");
+        }
+        String removedString = stringArray[index];
+        stringArray[index] = null;
+
+        int k = 0;
+        for (int i = 0; i < stringArray.length; i++) {
+            if (stringArray[i] != null) {
+                stringArray[k] = stringArray[i];
+                k++;
+            }
+        }
+        return removedString;
+    }
+
     public int size() {
         return size;
     }
