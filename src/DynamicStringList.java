@@ -1,6 +1,12 @@
 public class DynamicStringList implements StringList {
     
-    String[] array = new String[10];
+    public String[] stringArray = new String[10];
+    private int size;
+
+    public DynamicStringList() {
+        // constructor
+    }
+
     /**
      * Retrieves the string at the specified index in the list.
      *
@@ -9,7 +15,13 @@ public class DynamicStringList implements StringList {
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
      */
     public String get(int index){
-            return ;
+        String result = "Error";
+        try {
+            return stringArray[index];
+            } catch (IndexOutOfBoundsException error) {
+            System.out.println("Error: " + error);
+        }
+        return result;
     }
 
     /**
