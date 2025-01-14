@@ -1,6 +1,9 @@
+import java.util.Arrays;
+
 public class DynamicStringList implements StringList {
     
     private String[] stringArray = new String[10];
+    private int size;
 
     public String get(int index) {
         if (index < 0 || index >= size()) {
@@ -17,19 +20,19 @@ public class DynamicStringList implements StringList {
         stringArray[index] = value;
     }
 
-    // public void add(String value) {
-        
-    // }
+    public void add(String value) {
+        if (size == stringArray.length) {
+            stringArray = Arrays.copyOf(stringArray, stringArray.length + 1);
+            stringArray[size] = value;
+            size++;
+        } else {
+            stringArray[size] = value;
+            size++;
+        }
+    }
 
     public int size() {
-        int length = 0;
-
-        for (String string : stringArray) {
-            if (string != null) {
-                length++;
-            }
-        }
-        return length;
+        return size;
     }
 
     public int capacity() {
