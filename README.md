@@ -1,4 +1,4 @@
-# dynamicArray
+# dynamicArray (Alston, Kaalid)
 
 An assignment to understand how dynamic arrays work. Have one partner fork this repo and invite the other as a collaborator. When you are finished, make a PR against the original repository and have BOTH PARTNERS submit a link to the PR on Canvas.
 
