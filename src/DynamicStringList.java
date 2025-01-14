@@ -18,6 +18,11 @@ public class DynamicStringList implements StringList {
             throw new IndexOutOfBoundsException("Index out of bounderies: " + index);
         }
         return array[index];
-    }   
+    }
+
+    @Override
+    public void add(String value) {
+        
+    }
 }
 
