@@ -2,6 +2,11 @@ public class DynamicStringList implements StringList {
     // instance field(s)
     private String[] array;
     private int size;
+
+    public DynamicStringList() {
+        this.array = new String[10];
+        this.size = 0;
+    }
     
     @Override
     public String get(int index) {
