@@ -43,6 +43,23 @@ public class DynamicStringListTest {
         word.add("d");
 
         assertEquals(0, word.size());
-      
+    }
+
+    @Test 
+    public void testSize() {
+        DynamicStringList word = new DynamicStringList();
+        word.add("8");
+        word.add("7");
+        word.add("6");
+        word.add("5");
+
+        assertEquals(0, word.size());
+    }
+
+    @Test
+    public void testCapacity() {
+        DynamicStringList word = new DynamicStringList();
+
+        assertEquals(0, word.size());
     }
 }
