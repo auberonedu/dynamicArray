@@ -36,6 +36,13 @@ public class DynamicStringListTest {
 
     @Test
     public void testRemove() {
+        DynamicStringList word = new DynamicStringList();
+        word.add("a");
+        word.add("b");
+        word.add("c");
+        word.add("d");
+
+        assertEquals(0, word.size());
       
     }
 }
