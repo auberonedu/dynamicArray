@@ -13,8 +13,7 @@ public class DynamicStringList implements StringList {
 
     // 1.
     public String get(int index) {
-
-        
+       
     }
 
     // 2.
@@ -31,6 +30,20 @@ public class DynamicStringList implements StringList {
 
 
 // 4.
+public String remove(int index){
+    
+    String removed = "";
+
+    for(int i = 0; i < arr.length; i++){
+        if(arr[i] == arr[index]){
+            removed = arr[i];
+            arr[index] = null;
+        }
+    }
+
+    return removed;
+}
+
 
 
 
@@ -38,13 +51,12 @@ public class DynamicStringList implements StringList {
 // 5. Size
     public int size(){
         int counter = 0;
-        //when defining these, what can I latch onto to simulate the actual datatype/structure later
-        for (Integer i : index) {
-            if(i != null){
-                counter++;
-            }
+    for(int i = 0; i < arr.length; i++){
+        if(arr[i] != null){
+            counter++;
         }
-        return counter;
+    }
+    return counter;
     }
 
 
@@ -53,6 +65,9 @@ public class DynamicStringList implements StringList {
 
 
 // 6.
+public int capacity(){
+    return arr.length;
+}
 
 
 
