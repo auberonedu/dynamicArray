@@ -28,39 +28,39 @@ public class DynamicStringList implements StringList {
 
     @Override
     public void add(String value) {
-        if(size == myArr.length){
-
-            //create a new array double the length
-            //copy values to new array with 2x capacity
+        if (size == myArr.length) {
+            // create a new array double the length
+            // copy values to new array with 2x capacity
             String[] myArr2 = new String[myArr.length * 2];
 
-            for(int i = 0; i < myArr.length; i ++){
+            for (int i = 0; i < myArr.length; i++) {
                 myArr2[i] = myArr[i];
             }
 
             myArr = myArr2;
         }
-        //set value to end of the array
+        // set value to end of the array
         myArr[size] = value;
         size++;
     }
 
     @Override
     public String remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is out of range");
+        }
+        String removedString = myArr[index];
+        size--;
+        return removedString;
     }
 
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return size;
     }
 
     @Override
     public int capacity() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'capacity'");
+        return myArr.length;
     }
-
 }
