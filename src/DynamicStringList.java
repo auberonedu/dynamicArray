@@ -4,7 +4,7 @@ public class DynamicStringList implements StringList{
     private int currentIndex = 0;
 
     public String get(int index) {
-        if (index < 0 || index > dynamicArray.length) {
+        if (index < 0 || index > size()) {
             throw new IndexOutOfBoundsException("Index out of bounds");
         }
         return dynamicArray[index];
@@ -18,7 +18,19 @@ public class DynamicStringList implements StringList{
     }
 
     public void add(String value) {
-        dynamicArray[currentIndex] = value;
+        if (size() == capacity()) {
+            String[] biggerArray = new String[capacity() * 2]; // double it every time it is filled
+
+            for (int i = 0; i < size(); i++) {
+                biggerArray[i] = dynamicArray[i];
+            }
+
+            dynamicArray = biggerArray;
+            dynamicArray[currentIndex] = value;
+            
+        } else {
+            dynamicArray[currentIndex] = value;
+        }
         currentIndex++;
     }
 
@@ -41,13 +53,7 @@ public class DynamicStringList implements StringList{
     }
 
     public int size() {
-        int count = 0;
-        for (int i = 0; i < dynamicArray.length; i++) {
-            if (dynamicArray[i] != null) {
-                count++;
-            }
-        }
-        return count;
+        return currentIndex;
     }
 
     public int capacity() {
