@@ -71,4 +71,59 @@ public class DynamicStringListTest {
 
         assertThrows(IndexOutOfBoundsException.class, () -> list.set(4, "hotdog"));
     }
+
+    @Test
+    public void addWithAvailability() {
+        DynamicStringList list = new DynamicStringList();
+
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("six");
+
+        assertEquals(6, list.size());
+        assertEquals("five", list.get(4));
+    }
+
+    @Test
+    public void addWithNoAvailability() {
+        DynamicStringList list = new DynamicStringList();
+
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("six");
+        list.add("seven");
+        list.add("eight");
+        list.add("nine");
+        list.add("ten");
+        list.add("eleven");
+
+        assertEquals(11, list.size());
+        assertEquals("eleven", list.get(10));
+        assertEquals(20, list.capacity());
+    }
+
+    @Test
+    public void addCapacityIncreaseCorrect() {
+        DynamicStringList list = new DynamicStringList();
+
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("six");
+        list.add("seven");
+        list.add("eight");
+        list.add("nine");
+        list.add("ten");
+        list.add("eleven");
+
+        assertEquals(20, list.capacity());
+    }
 }
