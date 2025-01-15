@@ -4,7 +4,7 @@ public class DynamicStringList implements StringList{
     private int currentIndex = 0;
 
     public String get(int index) {
-        if (index < 0 || index > currentIndex) {
+        if (index < 0 || index > size()) {
             throw new IndexOutOfBoundsException("Index out of bounds");
         }
         return dynamicArray[index];
