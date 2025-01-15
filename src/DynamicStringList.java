@@ -37,6 +37,16 @@ public class DynamicStringList implements StringList {
     // remove value at a specific index and shift elemnts
     @Override
     public String remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
+        }
+        String removedValue = array[index];
+        for (int i = index; i < size - 1; i++) {
+            array[i] = array[i + 1]; // shifts to the left
+        }
+        array[size - 1] = null; // clears the last element
+        size--;
+        return removedValue;
 
     }
 
