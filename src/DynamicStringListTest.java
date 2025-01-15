@@ -36,7 +36,10 @@ public class DynamicStringListTest {
 
     @Test
     public void testCapacity() {
-        
+        DynamicStringList capacity = new DynamicStringList(2);
+        capacity.add("kaalid");
+        capacity.add("Alston");
+        assertEquals(2, capacity.capacity());
     }
 
     @Test

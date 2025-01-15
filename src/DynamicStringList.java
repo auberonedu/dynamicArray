@@ -44,6 +44,12 @@ public class DynamicStringList implements StringList {
         
         // Add the new element at the end
         arr[arr.length - 1] = value;
+
+        // Update the reference to the new array
+        array = arr;
+    
+        // Increment the size
+        size++;
     }
 
     // remove value at a specific index and shift elemnts
@@ -65,6 +71,7 @@ public class DynamicStringList implements StringList {
     //return the current number
     @Override
     public int size() {
+       
         return size;
     }
 
