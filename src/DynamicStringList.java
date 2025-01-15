@@ -7,14 +7,14 @@ public class DynamicStringList implements StringList {
     
     public String get(int index) {
         if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException(); 
+            throw new IndexOutOfBoundsException("Out of range: " + index); 
         }
         return data[index];
     }
 
     public void set(int index, String value) {
         if(index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("Out of range: " + index);
         } 
         data[index] = value; //update and replace
     }
@@ -27,7 +27,14 @@ public class DynamicStringList implements StringList {
     }
 
     public String remove(int index) {
-        return null;
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Out of range: " + index);
+        }
+
+        String remove = data[index];
+        data[size - 1] = null;
+        size--;
+        return remove;
     }
    
     public int size() {
