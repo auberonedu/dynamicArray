@@ -15,12 +15,19 @@ public class DynamicStringListTest {
 
     @Test
     public void testSet() {
-      
+        DynamicStringList word = new DynamicStringList();
+        word.add("daffodils");
+        word.add("sunflowers");
+
+        word.set(0, "wisteria"); 
+        word.set(1, "roses");  
+        assertEquals("wisteria", word.get(0));  
+        assertEquals("roses", word.get(1));  
     }
 
     @Test
     public void testAdd() {
-      
+        
     }
 
     @Test
