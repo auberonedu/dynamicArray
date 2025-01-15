@@ -35,6 +35,7 @@ public class DynamicStringList implements StringList {
 
             for (int i = 0; i < myArr.length; i++) {
                 myArr2[i] = myArr[i];
+                size++;
             }
 
             myArr = myArr2;
