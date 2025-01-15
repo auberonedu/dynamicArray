@@ -25,12 +25,18 @@ public class DynamicStringListTest {
 
     @Test
     public void testRemove() {
-
+        DynamicStringList colors = new DynamicStringList(3);
+        colors.add("green");
+        colors.add("red");
+        colors.add("black");
+        colors.remove(1);
+        assertEquals("green", colors.get(0));
+        assertEquals("black", colors.get(1));
     }
 
     @Test
     public void testCapacity() {
-
+        
     }
 
     @Test
