@@ -19,16 +19,24 @@ public class DynamicStringList implements StringList {
         strArray[index] = value;
     }
 
-   public void add(String value) {
-    strArray[size] = value;
-    size++;
-   }
+    @Override
+    public void add(String value) {
+        ensureCapacity();
+        strArray[size] = value;
+        size++;
+    }
 
-   public String remove(int index) {
-    String removedString = strArray[index];
-    strArray[index] = null;
-    return removedString;
-   }
+    @Override
+    public String remove(int index) {
+        checkIndex(index);
+        String removedString = strArray[index];
+        //shift elements to left
+        //System.arraycopy(obj src, int srcPos, obj dest, int destPos, int length) (Google search)
+        System.arraycopy(strArray, index + 1, strArray, index, size - index - 1);
+        //assign null to last element of array after size reduced, protects memory/dangling references (Chat)
+        strArray[--size] = null; //--size is pre-decrement operator ie used after -1 applied
+        return removedString;
+    }
 
     @Override
     public int size() {
