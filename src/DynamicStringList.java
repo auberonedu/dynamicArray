@@ -1,17 +1,13 @@
 public class DynamicStringList implements StringList {
   
-    private String[] data;
+    private String[] data = new String[10];
     private int size;
     private int capacity;
 
-    public DynamicStringList() {
-        data = new String[10];
-        size = 0;
-    }
 
     public String get(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException(); 
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is out of bounds."); 
         }
         return data[index];
     }
