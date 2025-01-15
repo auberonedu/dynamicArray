@@ -1,75 +1,77 @@
 public class DynamicStringList implements StringList {
     private String[] arr;
-    private int index;
+    private int size;
 
     // Constructor
-
-
-    // The array length should be X amout but the content of it shuold all be set to null;
     public DynamicStringList() {
         arr = new String[10];
-        int index = 0;
+        size = 0;
     }
 
-    // 1.
+    // 1. 
+    @Override
     public String get(int index) {
-       
-    }
-
-    // 2.
-    public void set(int index, String value) {
-
-    }
-
-    // 3.
-    public void add(String value) {
-
-    }
-
-
-
-
-// 4.
-public String remove(int index){
-    
-    String removed = "";
-
-    for(int i = 0; i < arr.length; i++){
-        if(arr[i] == arr[index]){
-            removed = arr[i];
-            arr[index] = null;
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException(index);
         }
+        return arr[index];
     }
 
-    return removed;
-}
+    // 2. 
+    @Override
+    public void set(int index, String value) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException(index);
+        }
+        arr[index] = value;
+    }
 
+    // 3. 
+    @Override
+    public void add(String value) {
+        if (size == arr.length) {
+            resize();
+        }
+        arr[size++] = value;
+    }
 
+    // 4. 
+    @Override
+    public String remove(int index){
+        String removed = "";
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == arr[index]){
+                removed = arr[i];
+                arr[index] = null;
+            }
+        }
+        return removed;
+    }
 
-
-
-// 5. Size
+    // 5. Size
+    @Override
     public int size(){
         int counter = 0;
-    for(int i = 0; i < arr.length; i++){
-        if(arr[i] != null){
-            counter++;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] != null){
+                counter++;
+            }
         }
+        return counter;
     }
-    return counter;
+
+    // 6.
+    @Override
+    public int capacity(){
+        return arr.length;
     }
 
-
-
-
-
-
-// 6.
-public int capacity(){
-    return arr.length;
-}
-
-
-
-    
+    // Helper method
+    private void resize() {
+        String[] newArr = new String[arr.length * 2];
+        for (int i = 0; i < size; i++) {
+            newArr[i] = arr[i];
+        }
+        arr = newArr;
+    }
 }
