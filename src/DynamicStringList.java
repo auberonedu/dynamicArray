@@ -8,7 +8,7 @@ public class DynamicStringList implements StringList {
         size = 0;
     }
 
-    // 1. 
+    // 1.
     @Override
     public String get(int index) {
         if (index < 0 || index >= size) {
@@ -17,7 +17,7 @@ public class DynamicStringList implements StringList {
         return arr[index];
     }
 
-    // 2. 
+    // 2.
     @Override
     public void set(int index, String value) {
         if (index < 0 || index >= size) {
@@ -26,7 +26,7 @@ public class DynamicStringList implements StringList {
         arr[index] = value;
     }
 
-    // 3. 
+    // 3.
     @Override
     public void add(String value) {
         if (size == arr.length) {
@@ -35,25 +35,28 @@ public class DynamicStringList implements StringList {
         arr[size++] = value;
     }
 
-    // 4. 
+    // 4.
     @Override
-    public String remove(int index){
-        String removed = "";
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] == arr[index]){
-                removed = arr[i];
-                arr[index] = null;
-            }
+    public String remove(int index) {
+
+        if (index < 0 || index >= arr.length) {
+            throw new IndexOutOfBoundsException(
+                    "That num is outside the arr of " + arr.length);
         }
+        String removed = "";
+        removed = arr[index];
+
+        arr[index] = null;
+
         return removed;
     }
 
     // 5. Size
     @Override
-    public int size(){
+    public int size() {
         int counter = 0;
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] != null){
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null) {
                 counter++;
             }
         }
@@ -62,7 +65,7 @@ public class DynamicStringList implements StringList {
 
     // 6.
     @Override
-    public int capacity(){
+    public int capacity() {
         return arr.length;
     }
 
