@@ -1,10 +1,15 @@
 public class DynamicStringList implements StringList {
   
-    private String[] info;
+    private String[] data;
     private int size;
+    private int capacity;
 
+    
     public String get(int index) {
-        return null;
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException(); 
+        }
+        return data[index];
     }
 
     public void set(int index, String value) {
