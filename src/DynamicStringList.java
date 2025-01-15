@@ -7,29 +7,42 @@ public class DynamicStringList implements StringList {
         myArr = new String[10];
         size = 0;
     };
-    
+
     @Override
-  public String get(int index) {
+    public String get(int index) {
 
-
-    if(index < 0 || index >= size()){
-        throw new IndexOutOfBoundsException("Index is out of range");
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is out of range");
         }
 
-        return myArr[index]; 
+        return myArr[index];
     }
-
 
     @Override
     public void set(int index, String value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is out of range");
+        }
+        myArr[index] = value;
     }
 
     @Override
     public void add(String value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        if(size == myArr.length){
+
+            //create a new array double the length
+            //copy values to new array with 2x capacity
+            String[] myArr2 = new String[myArr.length * 2];
+
+            for(int i = 0; i < myArr.length; i ++){
+                myArr2[i] = myArr[i];
+            }
+
+            myArr = myArr2;
+        }
+        //set value to end of the array
+        myArr[size] = value;
+        size++;
     }
 
     @Override
@@ -50,6 +63,4 @@ public class DynamicStringList implements StringList {
         throw new UnsupportedOperationException("Unimplemented method 'capacity'");
     }
 
-
-    
 }
