@@ -65,12 +65,12 @@ public class DynamicStringList implements StringList {
     //return the current number
     @Override
     public int size() {
-        return array.length;
+        return size;
     }
 
     // return the capacity of array
     @Override
     public int capacity() {
-        
+         return array.length;
     }
 }
