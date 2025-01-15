@@ -18,7 +18,19 @@ public class DynamicStringList implements StringList{
     }
 
     public void add(String value) {
-        dynamicArray[currentIndex] = value;
+        if (size() == capacity()) {
+            String[] biggerArray = new String[capacity() * 2]; // double it every time it is filled
+
+            for (int i = 0; i < size(); i++) {
+                biggerArray[i] = dynamicArray[i];
+            }
+
+            dynamicArray = biggerArray;
+            dynamicArray[currentIndex] = value;
+            
+        } else {
+            dynamicArray[currentIndex] = value;
+        }
         currentIndex++;
     }
 
