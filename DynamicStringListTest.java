@@ -28,17 +28,22 @@ class DynamicStringListTest {
 
         assertEquals("Apricot", list.get(0));
     }
+    
 
     @Test
-    void testRemove() {
-        list.add("Apple");
-        list.add("Banana");
-        list.add("Cherry");
+void testRemove() {
+    DynamicStringList list = new DynamicStringList();
+    list.add("Apple");
+    list.add("Banana");
+    list.add("Cherry");
 
-        String removed = list.remove(1);
-        assertEquals("Banana", removed);
-        assertNull(list.get(1)); // Ensure the element is null after removal
-    }
+    String removed = list.remove(1);
+    assertEquals("Banana", removed); // Ensure the correct element was removed
+    assertEquals("Cherry", list.get(1)); // Check that elements shifted correctly
+    assertEquals(2, list.size()); // Ensure size is updated
+    assertThrows(IndexOutOfBoundsException.class, () -> list.get(2)); // Ensure out-of-bounds is handled
+}
+
 
     @Test
     void testSize() {
