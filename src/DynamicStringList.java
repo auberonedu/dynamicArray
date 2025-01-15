@@ -4,9 +4,13 @@ public class DynamicStringList implements StringList {
     private int size;
     private int capacity;
 
-    
+    public DynamicStringList() {
+        data = new String[10];
+        size = 0;
+    }
+
     public String get(int index) {
-        if (index < 0 || index >= size()) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException(); 
         }
         return data[index];
