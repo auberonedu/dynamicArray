@@ -3,7 +3,7 @@ public class DynamicStringList implements StringList {
     private String myArr[];
     private int size;
 
-    public void StringList() {
+    public DynamicStringList() {
         myArr = new String[10];
         size = 0;
     };
