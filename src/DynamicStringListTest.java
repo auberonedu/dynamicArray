@@ -27,8 +27,12 @@ public class DynamicStringListTest {
 
     @Test
     public void testAdd() {
-        
-    }
+        DynamicStringList word = new DynamicStringList();
+        word.add("hello");
+        word.add("world");
+
+        assertEquals(0, word.size());
+}
 
     @Test
     public void testRemove() {
