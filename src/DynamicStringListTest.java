@@ -6,11 +6,10 @@ public class DynamicStringListTest {
     public void testGet() {
         DynamicStringList word = new DynamicStringList();
 
-        word.add("avocado");
-        word.add("orange");
+            word.add("avocado");
+            word.add("orange");
         
-        assertEquals("avocado", word.get(0));
+        assertEquals("avocado", word.get(3));
         assertEquals("orange", word.get(1));
-
     }
 }
