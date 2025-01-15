@@ -30,7 +30,8 @@ public class DynamicStringList implements StringList {
 
    public String remove(int index) {
     String removedString = strArray[index];
-    strArray[index] = null;
+    strArray[index] = null; 
+    size--;
     return removedString;
    }
 
