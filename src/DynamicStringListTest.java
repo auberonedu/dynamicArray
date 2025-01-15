@@ -12,4 +12,19 @@ public class DynamicStringListTest {
         assertEquals("avocado", word.get(3));
         assertEquals("orange", word.get(1));
     }
+
+    @Test
+    public void testSet() {
+      
+    }
+
+    @Test
+    public void testAdd() {
+      
+    }
+
+    @Test
+    public void testRemove() {
+      
+    }
 }
