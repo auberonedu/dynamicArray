@@ -6,7 +6,14 @@ public class DynamicStringListTest {
     // Tests the get method. Should return a string at the specified index.
     @Test
     void getTest(){
+        DynamicStringList test = new DynamicStringList(3);
+        test.add("hello");
+        test.add("goodbye");
+        test.add("This is a test");
 
+        assertEquals("hello", test.get(0));
+        assertEquals("goodbye", test.get(1));
+        assertEquals("This is a test", test.get(2));
     }
 
     // Tests the set method. Should replace the string at a specified index.
@@ -20,7 +27,16 @@ public class DynamicStringListTest {
     incremenets up by one. */
     @Test
     void addTest(){
+        DynamicStringList test = new DynamicStringList(3);
+        test.add("hello");
+        test.add("goodbye");
+        test.add("This is a test");
+        test.add("Did it pass?");
 
+        assertEquals("hello", test.get(0));
+        assertEquals("goodbye", test.get(1));
+        assertEquals("This is a test", test.get(2));
+        assertEquals("Did it pass?", test.get(3));
     }
 
     // Tests the remove method. Removed a string at the specified index from the list.
@@ -39,6 +55,12 @@ public class DynamicStringListTest {
     before needing to be resized. */
     @Test
     void capacityTest(){
-        
+        DynamicStringList test = new DynamicStringList(8);
+        test.add("hello");
+        test.add("goodbye");
+        test.add("This is a test");
+        test.add("Did it pass?");
+
+        assertEquals(8, test.capacity());
     }
 }
