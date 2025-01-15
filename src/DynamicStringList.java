@@ -24,9 +24,53 @@ public class DynamicStringList implements StringList {
     @Override
     public void set(int index, String value) {
         if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index out of bounds!");
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
         }
         array[index] = value;
     }
-}
 
+    // add a new value to the end
+    @Override
+    public void add(String value) {
+        if(value == null || value.isEmpty()) {
+            throw new NullPointerException("Value cannot be null nor empty!");
+        }
+
+        // Create a new array with one more element since our original array is fixed.
+        String[] arr = new String[array.length + 1];
+        
+        // Copy the original array into the new array
+        System.arraycopy(array, 0, arr, 0, array.length);
+        
+        // Add the new element at the end
+        arr[arr.length - 1] = value;
+    }
+
+    // remove value at a specific index and shift elemnts
+    @Override
+    public String remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
+        }
+        String removedValue = array[index];
+        for (int i = index; i < size - 1; i++) {
+            array[i] = array[i + 1]; // shifts to the left
+        }
+        array[size - 1] = null; // clears the last element
+        size--;
+        return removedValue;
+
+    }
+
+    //return the current number
+    @Override
+    public int size() {
+        return array.length;
+    }
+
+    // return the capacity of array
+    @Override
+    public int capacity() {
+        
+    }
+}
