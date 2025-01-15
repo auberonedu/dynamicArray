@@ -3,8 +3,8 @@ public class DynamicStringList implements StringList {
     private String array[];
     private int count;
 
-    public DynamicStringList(){
-        array = new String[10];
+    public DynamicStringList(int size){
+        array = new String[size];
         count = 0;
     }
 
