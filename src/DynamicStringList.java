@@ -47,17 +47,18 @@ public class DynamicStringList implements StringList {
      * @param value the string to add to the list.
      */
     public void add(String value) {
-        if (count > capacity()) {
-            String[] placeholder = new String[size() + 1];
-            for (int i = 0; i < size() - 1; i++) {
+        if (count == capacity()) {
+            String[] placeholder = new String[capacity()*2];
+            for (int i = 0; i <= size() - 1; i++) {
                 placeholder[i] = array[i];
             }
-            placeholder[size() + 1] = value;
+            placeholder[size()] = value;
             array = placeholder;
             count++;
-        }
+        } else{
         array[count] = value;
         count++;
+        }
     }
 
     /**
