@@ -1,7 +1,12 @@
 public class DynamicStringList implements StringList {
 
-    private String[] array = new String[5];
-    private int count = 0;
+    private String array[];
+    private int count;
+
+    public DynamicStringList(){
+        array = new String[10];
+        count = 0;
+    }
 
     //Kim
     /**
