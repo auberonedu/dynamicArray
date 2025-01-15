@@ -42,6 +42,6 @@ public class DynamicStringList implements StringList {
     }
 
     public int capacity() {
-        return null;
+        return data.length;
     }
 }
