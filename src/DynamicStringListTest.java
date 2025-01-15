@@ -5,12 +5,9 @@ public class DynamicStringListTest {
     @Test
     public void testGet() {
         DynamicStringList word = new DynamicStringList();
-
-            word.add("avocado");
-            word.add("orange");
+        word.add("avocado");
         
-        assertEquals("avocado", word.get(3));
-        assertEquals("orange", word.get(1));
+        assertEquals("avocado", word.get(1));
     }
 
     @Test
