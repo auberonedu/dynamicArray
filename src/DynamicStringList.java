@@ -29,6 +29,14 @@ public class DynamicStringList implements StringList{
 
         String removed = dynamicArray[index];
         dynamicArray[index] = null;
+
+        int x = 0;
+        for (int i = 0; i < dynamicArray.length; i++) {
+            if (dynamicArray[i] != null) {
+                dynamicArray[x++] = dynamicArray[i];
+                dynamicArray[i] = null;
+            }
+        }
         return removed;
     }
 
