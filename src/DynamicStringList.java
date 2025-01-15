@@ -24,7 +24,7 @@ public class DynamicStringList implements StringList {
     @Override
     public void set(int index, String value) {
         if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index out of bounds!");
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
         }
         array[index] = value;
     }
@@ -32,7 +32,6 @@ public class DynamicStringList implements StringList {
     // add a new value to the end
     @Override
     public void add(String value) {
-     
     }
 
     // remove value at a specific index and shift elemnts
