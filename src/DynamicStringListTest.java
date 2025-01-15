@@ -126,4 +126,107 @@ public class DynamicStringListTest {
 
         assertEquals(20, list.capacity());
     }
+
+    @Test
+    public void removeValidIndex() {
+        DynamicStringList list = new DynamicStringList();
+
+        list.add("Potato");
+        list.add("Tomato");
+        list.add("Avocado");
+
+        assertEquals("Avocado", list.remove(2));
+    }
+
+    @Test
+    public void removeInvalidIndex() {
+        DynamicStringList list = new DynamicStringList();
+
+        list.add("Potato");
+        list.add("Tomato");
+        list.add("Avocado");
+
+        assertThrows(IndexOutOfBoundsException.class, () -> list.remove(-1));
+    }
+
+    @Test
+    public void removeOutOfBounds() {
+        DynamicStringList list = new DynamicStringList();
+
+        list.add("Potato");
+        list.add("Tomato");
+        list.add("Avocado");
+
+        assertThrows(IndexOutOfBoundsException.class, () -> list.remove(10));
+    }
+
+    @Test
+    public void size() {
+        DynamicStringList list = new DynamicStringList();
+
+        list.add("Potato");
+        list.add("Tomato");
+        list.add("Avocado");
+
+        assertEquals(3, list.size());
+    }
+
+    @Test
+    public void sizeEmpty() {
+        DynamicStringList list = new DynamicStringList();
+
+        assertEquals(0, list.size());
+    }
+
+    @Test
+    public void capacity() {
+        DynamicStringList list = new DynamicStringList();
+        
+        assertEquals(10, list.capacity());
+
+        list.add("Potato");
+        list.add("Tomato");
+        list.add("Avocado");
+        
+        assertEquals(10, list.capacity());
+
+        // trigger expansion
+        for (int i = 0; i < 10; i++) {
+            list.add("Food - " + i);
+        }
+
+        assertEquals(20, list.capacity());
+    }
+
+    @Test
+    public void capacityDoubling() {
+        DynamicStringList list = new DynamicStringList();
+        
+        assertEquals(0, list.size());
+        assertEquals(10, list.capacity());
+
+        // trigger expansion
+        for (int i = 0; i < 11; i++) {
+            list.add("Food - " + i);
+        }
+        
+        assertEquals(11, list.size());
+        assertEquals(20, list.capacity());
+
+        // trigger another expansion
+        for (int i = 0; i < 11; i++) {
+            list.add("Food - " + i);
+        }
+
+        assertEquals(22, list.size());
+        assertEquals(40, list.capacity());
+
+        // trigger another expansion
+        for (int i = 0; i < 51; i++) {
+            list.add("Food - " + i);
+        }
+
+        assertEquals(73, list.size());
+        assertEquals(80, list.capacity());
+    }
 }
