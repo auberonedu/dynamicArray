@@ -36,8 +36,10 @@ public class DynamicStringListTest {
         DynamicStringList testCapacityTestArray = new DynamicStringList(0) ;
 
         // Act
-        
+        testCapacityTestArray.add("hello");
+
         // Assert
+        assertEquals(1, testCapacityTestArray.capacity());
     }
 
     @Test
