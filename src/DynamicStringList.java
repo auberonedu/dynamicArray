@@ -86,7 +86,14 @@ public class DynamicStringList implements StringList {
 
     @Override
     public int size() {
-        return 0;
+        int sizeCounter = 0;
+
+        for(int i = 0; i < stringArr.length; i++) {
+            if (stringArr[i] != null) {
+                sizeCounter++;
+            }
+        }
+        return sizeCounter;
     }
 
     @Override
