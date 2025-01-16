@@ -2,10 +2,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DynamicStringListTest {
-    
+
     // Tests the get method. Should return a string at the specified index.
     @Test
-    void getTest(){
+    void getTest() {
         DynamicStringList test = new DynamicStringList(3);
         test.add("hello");
         test.add("goodbye");
@@ -17,16 +17,26 @@ public class DynamicStringListTest {
     }
 
     // Tests the set method. Should replace the string at a specified index.
-    @Test 
-    void setTest(){
+    @Test
+    void setTest() {
+        DynamicStringList test = new DynamicStringList(5);
+        test.add("First");
+        test.add("Second");
+        test.add("Third");
+        test.add("Fourth");
+        test.add("Fifth");
 
+        test.set(2, "Seventh");
+        assertEquals("Seventh", test.get(2));
     }
 
-    /* Tests the add method. Should tack a new string at the end of the list.
-    Creates a new list to account for size if capacity is reached, also
-    incremenets up by one. */
+    /*
+     * Tests the add method. Should tack a new string at the end of the list.
+     * Creates a new list to account for size if capacity is reached, also
+     * incremenets up by one.
+     */
     @Test
-    void addTest(){
+    void addTest() {
         DynamicStringList test = new DynamicStringList(3);
         test.add("hello");
         test.add("goodbye");
@@ -39,22 +49,38 @@ public class DynamicStringListTest {
         assertEquals("Did it pass?", test.get(3));
     }
 
-    // Tests the remove method. Removed a string at the specified index from the list.
+    // Tests the remove method. Removed a string at the specified index from the
+    // list.
     @Test
-    void removeTest(){
+    void removeTest() {
+        DynamicStringList test = new DynamicStringList(4);
+        test.add("Primus");
+        test.add("Secundus");
+        test.add("Tertius");
+        test.add("Quartus");
+
+        assertEquals("Tertius", test.remove(2));
+        assertEquals("Primus", test.remove(0));
 
     }
 
     // Tests the size method. Returns the number of strings currently in the list.
     @Test
-    void sizeTest(){
+    void sizeTest() {
+        DynamicStringList test = new DynamicStringList(3);
+        test.add("Quintus");
+        test.add("Sextus");
+        test.add("Septimus");
 
+        assertEquals(3, test.size());
     }
 
-    /* Tests the capactity method. Returns the number of string the list can hold
-    before needing to be resized. */
+    /*
+     * Tests the capactity method. Returns the number of string the list can hold
+     * before needing to be resized.
+     */
     @Test
-    void capacityTest(){
+    void capacityTest() {
         DynamicStringList test = new DynamicStringList(8);
         test.add("hello");
         test.add("goodbye");
