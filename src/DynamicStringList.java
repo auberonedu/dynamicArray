@@ -42,16 +42,16 @@ public class DynamicStringList implements StringList {
     @Override
     public void add(String value) {
 
-        if (this.size() == this.capacity()) {
-            String[] newList = new String[stringArr.length * 2];
+        if (stringArr[stringArr.length - 1] != null) {
+            String[] newList = new String[this.size() * 2];
 
             for (int i = 0; i < stringArr.length; i++) {
-                stringArr[i] = newList[i];
+                newList[i] = stringArr[i];
             }
 
             newList[stringArr.length] = value;
 
-            stringArr = newList;
+            this.stringArr = newList;
         }
         else {
             for (int i = 0; i < stringArr.length - 1; i++) {

@@ -32,7 +32,12 @@ public class DynamicStringListTest {
 
     @Test
     void testCapacity() {
+        // Arrange 
+        DynamicStringList testCapacityTestArray = new DynamicStringList(0) ;
 
+        // Act
+        
+        // Assert
     }
 
     @Test
