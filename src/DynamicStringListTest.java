@@ -1,6 +1,5 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DynamicStringListTest {
 
@@ -30,7 +29,8 @@ public class DynamicStringListTest {
         colors.add("green");
         colors.add("red");
         colors.add("black");
-        colors.remove(1);
+        String removed = colors.remove(1);
+        assertEquals("red", removed);
         assertEquals("green", colors.get(0));
         assertEquals("black", colors.get(1));
     }
