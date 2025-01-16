@@ -8,7 +8,8 @@ public interface StringList {
    *
    * @param index the index of the string to retrieve.
    * @return the string at the specified index.
-   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
+   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or
+   *                                   index >= size()).
    */
   public String get(int index);
 
@@ -17,7 +18,8 @@ public interface StringList {
    *
    * @param index the index of the string to replace.
    * @param value the new value to set at the specified index.
-   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
+   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or
+   *                                   index >= size()).
    */
   public void set(int index, String value);
 
@@ -33,7 +35,8 @@ public interface StringList {
    *
    * @param index the index of the string to remove.
    * @return the string that was removed.
-   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
+   * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or
+   *                                   index >= size()).
    */
   public String remove(int index);
 
@@ -45,7 +48,8 @@ public interface StringList {
   public int size();
 
   /**
-   * Returns the current capacity of the list (i.e., the number of elements it can hold before resizing).
+   * Returns the current capacity of the list (i.e., the number of elements it can
+   * hold before resizing).
    *
    * @return the capacity of the list.
    */
