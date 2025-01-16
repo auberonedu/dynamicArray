@@ -66,7 +66,22 @@ public class DynamicStringList implements StringList {
 
     @Override
     public String remove(int index) {
-        return null;
+        if (index < 0 || index >= stringArr.length) {
+            throw new IndexOutOfBoundsException();
+        } else {
+            String removedString = "";
+            for (int i = 0; i < stringArr.length; i++) {
+                if (i == index){
+                    removedString = stringArr[i];
+                    stringArr[i] = null;
+                }
+                if (stringArr[i] == null){
+                    stringArr[i] = stringArr[i+1];
+                    stringArr[i+1] = null;
+                }
+            }
+            return removedString;
+        }   
     }
 
     @Override
