@@ -100,6 +100,12 @@ public class DynamicStringListTest {
 
     @Test
     void testSize() {
+        // Arrange
+        DynamicStringList setTest = new DynamicStringList(3);
 
+        // Act
+        setTest.add("Hello");
+        
+        assertEquals(1, setTest.size());
     }
 }
