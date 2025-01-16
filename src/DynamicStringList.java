@@ -42,7 +42,7 @@ public class DynamicStringList implements StringList {
     @Override
     public void add(String value) {
 
-        if (stringArr[stringArr.length - 1] != null) {
+        if (this.size() == stringArr.length) {
             String[] newList = new String[this.size() * 2];
 
             for (int i = 0; i < stringArr.length; i++) {
@@ -54,7 +54,7 @@ public class DynamicStringList implements StringList {
             this.stringArr = newList;
         }
         else {
-            for (int i = 0; i < stringArr.length - 1; i++) {
+            for (int i = 0; i < stringArr.length; i++) {
                 if (stringArr[i] == null) {
                     stringArr[i] = value;
                     break;
