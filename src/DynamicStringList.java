@@ -65,7 +65,6 @@ public class DynamicStringList implements StringList {
         array[size - 1] = null; // clears the last element
         size--;
         return removedValue;
-
     }
 
     //return the current number
