@@ -36,20 +36,28 @@ public class DynamicStringList implements StringList {
             throw new NullPointerException("Value cannot be null nor empty!");
         }
 
-        // Create a new array with one more element since our original array is fixed.
-        String[] arr = new String[array.length + 1];
-        
-        // Copy the original array into the new array
-        System.arraycopy(array, 0, arr, 0, array.length);
-        
-        // Add the new element at the end
-        arr[arr.length - 1] = value;
-
-        // Update the reference to the new array
-        array = arr;
-    
-        // Increment the size
+        if (size == array.length) {
+            String[] newArray = new String[array.length * 2];
+            System.arraycopy(array, 0, newArray, 0, array.length);
+            array = newArray;
+        }
+        array[size] = value;
         size++;
+
+        // // Create a new array with one more element since our original array is fixed.
+        // String[] arr = new String[array.length + 1];
+        
+        // // Copy the original array into the new array
+        // System.arraycopy(array, 0, arr, 0, array.length);
+        
+        // // Add the new element at the end
+        // arr[arr.length - 1] = value;
+
+        // // Update the reference to the new array
+        // array = arr;
+    
+        // // Increment the size
+        // size++;
     }
 
     // remove value at a specific index and shift elemnts
