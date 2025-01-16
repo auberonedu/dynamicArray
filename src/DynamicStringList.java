@@ -44,6 +44,22 @@ public class DynamicStringList implements StringList {
 
         if (stringArr[stringArr.length - 1] != null) {
             String[] newList = new String[stringArr.length * 2];
+
+            for (int i = 0; i < stringArr.length; i++) {
+                stringArr[i] = newList[i];
+            }
+
+            newList[stringArr.length] = value;
+
+            stringArr = newList;
+        }
+        else {
+            for (int i = 0; i < stringArr.length - 1; i++) {
+                if (stringArr[i] == null) {
+                    stringArr[i] = value;
+                    break;
+                }
+            }
         }
 
     }
