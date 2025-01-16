@@ -33,7 +33,7 @@ public class DynamicStringList implements StringList {
         if (index < 0 || index >= stringArr.length) {
             throw new IndexOutOfBoundsException();
         } else {
-            for (int i = 0; i > stringArr.length; i++) {
+            for (int i = 0; i < stringArr.length; i++) {
                 if (i == index) {
                     stringArr[i] = value;
                 }

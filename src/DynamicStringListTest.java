@@ -82,6 +82,19 @@ public class DynamicStringListTest {
 
     @Test
     void testSet() {
+        // Arrange
+        DynamicStringList setTest = new DynamicStringList(3);
+
+        // Act
+        setTest.add("Hello");
+        setTest.add("Test");
+        setTest.add("Grr");
+        setTest.set(1, "Derp");
+
+        // Assert
+        assertEquals("Hello", setTest.get(0));
+        assertEquals("Derp", setTest.get(1));
+        assertEquals("Grr", setTest.get(2));
 
     }
 
