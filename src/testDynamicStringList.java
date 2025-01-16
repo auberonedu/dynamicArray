@@ -50,6 +50,13 @@ public class testDynamicStringList {
     // Test for resizing
     @Test
     public void testResize() {
-
+        DynamicStringList list = new DynamicStringList();
+        for (int i = 0; i < 10; i++) {
+            list.add("Element " + i);
+        }
+        assertEquals(10, list.size());
+        assertEquals("Element 0", list.get(0));
+        assertEquals("Element 5", list.get(5));
+        assertEquals("Element 9", list.get(9));
     }
 }
