@@ -42,7 +42,7 @@ public class DynamicStringList implements StringList {
     @Override
     public void add(String value) {
 
-        if (stringArr[stringArr.length - 1] != null) {
+        if (this.size() == this.capacity()) {
             String[] newList = new String[stringArr.length * 2];
 
             for (int i = 0; i < stringArr.length; i++) {
@@ -98,6 +98,6 @@ public class DynamicStringList implements StringList {
 
     @Override
     public int capacity() {
-        return 0;
+        return stringArr.length;
     }
 }
