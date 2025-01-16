@@ -31,8 +31,8 @@ public class DynamicStringList implements StringList {
         if (index < 0 || index >= stringArr.length) {
             throw new IndexOutOfBoundsException();
         } else {
-            for (int i = 0; i > stringArr.length; i++){
-                if (i == index){
+            for (int i = 0; i > stringArr.length; i++) {
+                if (i == index) {
                     stringArr[i] = value;
                 }
             }
@@ -42,7 +42,7 @@ public class DynamicStringList implements StringList {
     @Override
     public void add(String value) {
 
-        if (this.size() == 0){
+        if (this.capacity() == 0) {
             String[] newList = new String[1];
             newList[stringArr.length] = value;
 
@@ -57,8 +57,7 @@ public class DynamicStringList implements StringList {
             newList[stringArr.length] = value;
 
             this.stringArr = newList;
-        }
-        else {
+        } else {
             for (int i = 0; i < stringArr.length; i++) {
                 if (stringArr[i] == null) {
                     stringArr[i] = value;
@@ -76,24 +75,24 @@ public class DynamicStringList implements StringList {
         } else {
             String removedString = "";
             for (int i = 0; i < stringArr.length; i++) {
-                if (i == index){
+                if (i == index) {
                     removedString = stringArr[i];
                     stringArr[i] = null;
                 }
-                if (stringArr[i] == null){
-                    stringArr[i] = stringArr[i+1];
-                    stringArr[i+1] = null;
+                if (stringArr[i] == null) {
+                    stringArr[i] = stringArr[i + 1];
+                    stringArr[i + 1] = null;
                 }
             }
             return removedString;
-        }   
+        }
     }
 
     @Override
     public int size() {
         int sizeCounter = 0;
 
-        for(int i = 0; i < stringArr.length; i++) {
+        for (int i = 0; i < stringArr.length; i++) {
             if (stringArr[i] != null) {
                 sizeCounter++;
             }

@@ -44,6 +44,19 @@ public class DynamicStringListTest {
 
     @Test
     void testGet() {
+        // Arrange
+        DynamicStringList getTest = new DynamicStringList(3);
+
+        // Act
+        getTest.add("Hello");
+        getTest.add("Test");
+        getTest.add("Grr");
+
+
+        // Assert
+        assertEquals("Hello", getTest.get(0));
+        assertEquals("Test", getTest.get(1));
+        assertEquals("Grr", getTest.get(2));
 
     }
 
