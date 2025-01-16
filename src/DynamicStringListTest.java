@@ -62,6 +62,21 @@ public class DynamicStringListTest {
 
     @Test
     void testRemove() {
+        // Arrange
+        DynamicStringList getTest = new DynamicStringList(3);
+
+        // Act
+        getTest.add("Hello");
+        getTest.add("Test");
+        getTest.add("Grr");
+        String removed = getTest.remove(1);
+
+
+        // Assert
+        assertEquals("Hello", getTest.get(0));
+        assertEquals(null, getTest.get(1));
+        assertEquals("Grr", getTest.get(2));
+        assertEquals("Test", removed);
 
     }
 

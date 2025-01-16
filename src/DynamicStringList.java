@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DynamicStringList implements StringList {
 
     // Constructor
@@ -75,14 +77,15 @@ public class DynamicStringList implements StringList {
         } else {
             String removedString = "";
             for (int i = 0; i < stringArr.length; i++) {
+                System.out.println(Arrays.toString(stringArr));
                 if (i == index) {
                     removedString = stringArr[i];
                     stringArr[i] = null;
                 }
-                if (stringArr[i] == null) {
+                /* if (stringArr[i] == null) {
                     stringArr[i] = stringArr[i + 1];
                     stringArr[i + 1] = null;
-                }
+                } */
             }
             return removedString;
         }
